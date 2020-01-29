@@ -74,7 +74,6 @@ The code is structured this way to separate the model files from the tests files
 * ```rspec``` for testing
 * ```rubocop``` for linting
 * ```simplecov``` for test coverage
-* ```timecop``` for feature testing time-dependent code
 
 ### Prerequisites
 
