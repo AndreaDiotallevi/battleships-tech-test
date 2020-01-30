@@ -10,4 +10,13 @@ describe Board do
       expect(board.place_ship("A1")).to eq [ship]
     end
   end
+
+  describe "#calculate_board" do
+    it "should return an empty board" do
+      expect(board.calculate_board).to eq [[".", ".", ".", "."],
+                                           [".", ".", ".", "."],
+                                           [".", ".", ".", "."],
+                                           [".", ".", ".", "."]]
+    end
+  end
 end

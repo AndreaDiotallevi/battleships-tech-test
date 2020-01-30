@@ -10,4 +10,11 @@ describe Player do
       expect(player.place_ship("A1")).to eq [ship]
     end
   end
+
+  describe "#current_board" do
+    it "should return the current board" do
+      allow(board).to receive(:calculate_board).and_return [[".", ".", ".", "."]] * 4
+      expect(player.current_board).to eq [[".", ".", ".", "."]] * 4
+    end
+  end
 end

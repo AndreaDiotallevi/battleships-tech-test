@@ -3,7 +3,11 @@ class Player
     @board = board
   end
 
-  def place_ship(location)
-    @board.place_ship(location)
+  def place_ship(origin)
+    @board.place_ship(origin)
+  end
+
+  def current_board
+    @board.calculate_board
   end
 end
