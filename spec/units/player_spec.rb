@@ -5,9 +5,9 @@ describe Player do
   let(:board) { double(:board, place_ship: [ship]) }
   let(:player) { Player.new(board) }
 
-  describe "#place_ship" do
+  describe "#choose_ship" do
     it "should return all board's ships" do
-      expect(player.place_ship("A1", 2, "r")).to eq [ship]
+      expect(player.choose_ship("A1", 2, "r")).to eq [ship]
     end
   end
 

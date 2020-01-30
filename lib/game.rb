@@ -10,7 +10,7 @@ class Game
   end
 
   def setup_player_board
-    @player.place_ship(player_ship_origin, player_ship_size, player_ship_direction)
+    @player.choose_ship(player_ship_origin, player_ship_size, player_ship_direction)
   end
 
   private

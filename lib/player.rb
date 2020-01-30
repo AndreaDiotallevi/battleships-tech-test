@@ -3,7 +3,7 @@ class Player
     @board = board
   end
 
-  def place_ship(origin, size, direction)
+  def choose_ship(origin, size, direction)
     @board.place_ship(origin, size, direction)
   end
 
