@@ -7,7 +7,7 @@ describe Board do
 
   describe "#place_ship" do
     it "should return all player board's ships" do
-      expect(board.place_ship("A1")).to eq [ship]
+      expect(board.place_ship("A1", 2)).to eq [ship]
     end
   end
 

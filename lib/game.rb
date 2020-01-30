@@ -10,8 +10,8 @@ class Game
   end
 
   def setup_player_board
-    puts "Please enter the origin location of the ship"
-    ship_origin = gets.chomp
-    @player.place_ship(ship_origin)
+    puts "Please enter the ship's origin and size (either 2, 3 or 4) separated by a comma"
+    ship_origin, ship_size = gets.chomp.split(",")
+    @player.place_ship(ship_origin, ship_size.to_i)
   end
 end

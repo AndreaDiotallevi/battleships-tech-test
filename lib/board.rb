@@ -9,8 +9,9 @@ class Board
     @ship_class = ship_class
   end
 
-  def place_ship(origin)
-    @ships << @ship_class.new([origin])
+  def place_ship(origin, size)
+    coordinates = calculate_ship_coordinates(origin, size)
+    @ships << @ship_class.new(coordinates)
   end
 
   def calculate_board
@@ -22,6 +23,14 @@ class Board
   end
 
   private
+
+  def calculate_ship_coordinates(origin, size)
+    coordinates = [origin]
+    (size - 1).times do
+      coordinates << "B1"
+    end
+    coordinates
+  end
 
   def empty_cell?(coordinate)
     @ships.all? { |ship| !ship.includes?(coordinate) }
