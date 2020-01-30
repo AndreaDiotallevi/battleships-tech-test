@@ -22,7 +22,7 @@ describe Board do
           end
         end
       end
-      expect(board.place_ship("A1", 2)).to eq [ship]
+      expect(board.place_ship("A1", 2, "r")).to eq [ship]
       expect(board.calculate_board).to eq [[".", ".", ".", "."]] * 3 + [["S", "S", ".", "."]]
     end
   end

@@ -9,11 +9,6 @@ class Board
     @ship_class = ship_class
   end
 
-  def place_ship(origin, size)
-    coordinates = calculate_ship_coordinates(origin, size)
-    @ships << @ship_class.new(coordinates)
-  end
-
   def calculate_board
     MATRIX.map do |row|
       row.map do |coordinate|
@@ -22,9 +17,14 @@ class Board
     end
   end
 
+  def place_ship(origin, size, direction)
+    coordinates = calculate_ship_coordinates(origin, size, direction)
+    @ships << @ship_class.new(coordinates)
+  end
+
   private
 
-  def calculate_ship_coordinates(origin, size)
+  def calculate_ship_coordinates(origin, size, direction)
     coordinates = [origin]
     (size - 1).times do
       coordinates << "B1"
