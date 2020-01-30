@@ -6,7 +6,7 @@ describe Player do
   let(:player) { Player.new(board) }
 
   describe "#place_ship" do
-    it "should return all player board's ships" do
+    it "should return all board's ships" do
       expect(player.place_ship("A1", 2)).to eq [ship]
     end
   end
