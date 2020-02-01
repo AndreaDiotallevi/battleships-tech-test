@@ -13,7 +13,7 @@ describe Board do
 
   describe "#place_ship" do
     it "should return all board's ships" do
-      Board::MATRIX.each do |row|
+      Board::COORDINATES.each do |row|
         row.each do |coordinate|
           if ["A1", "B1"].include? coordinate
             allow(ship).to receive(:includes?).with(coordinate).and_return true

@@ -1,5 +1,4 @@
 require "game"
-require "player"
 require "board"
 require "ship"
 require "cell"

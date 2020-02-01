@@ -1,8 +1,8 @@
 class Board
-  MATRIX = [["A4", "B4", "C4", "D4"],
-            ["A3", "B3", "C3", "D3"],
-            ["A2", "B2", "C2", "D2"],
-            ["A1", "B1", "C1", "D1"]]
+  COORDINATES = [["A4", "B4", "C4", "D4"],
+                 ["A3", "B3", "C3", "D3"],
+                 ["A2", "B2", "C2", "D2"],
+                 ["A1", "B1", "C1", "D1"]]
 
   def initialize(ship_class = Ship)
     @ships = []
@@ -10,7 +10,7 @@ class Board
   end
 
   def calculate_board
-    MATRIX.map do |row|
+    COORDINATES.map do |row|
       row.map do |coordinate|
         empty_cell?(coordinate) ? "." : "S"
       end
