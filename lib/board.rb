@@ -5,34 +5,40 @@ class Board
                  ["A1", "B1", "C1", "D1"]]
 
   def initialize(ship_class = Ship)
-    @ships = []
     @ship_class = ship_class
+    @ships = []
+    @hits = []
+  end
+
+  def place_ship(origin, size, direction)
+    @ships << @ship_class.new(origin, size, direction)
+    calculate_board
   end
 
   def calculate_board
     COORDINATES.map do |row|
       row.map do |coordinate|
-        empty_cell?(coordinate) ? "." : "S"
+        render_cell(coordinate)
+        # empty_cell?(coordinate) ? "." : "S"
       end
     end
   end
 
-  def place_ship(origin, size, direction)
-    coordinates = calculate_ship_coordinates(origin, size, direction)
-    @ships << @ship_class.new(coordinates)
-  end
-
   private
 
-  def calculate_ship_coordinates(origin, size, direction)
-    coordinates = [origin]
-    (size - 1).times do
-      coordinates << "B1"
-    end
-    coordinates
+  def render_cell(coordinate)
+    "."
   end
 
-  def empty_cell?(coordinate)
-    @ships.all? { |ship| !ship.includes?(coordinate) }
-  end
+  # def calculate_ship_coordinates(origin, size, direction)
+  #   coordinates = [origin]
+  #   (size - 1).times do
+  #     coordinates << "B1"
+  #   end
+  #   coordinates
+  # end
+
+  # def empty_cell?(coordinate)
+  #   @ships.all? { |ship| !ship.includes?(coordinate) }
+  # end
 end
